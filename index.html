@@ -237,11 +237,6 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 
   <div class="split" id="split"><div class="lst" id="main" role="listbox" aria-label="불만·건의 목록"></div><aside class="detail" id="detail" aria-live="polite"></aside></div>
 
-  <footer>
-    <span id="srcNote"></span>
-    <span>4월 이전과 5~7월의 분류명은 지금의 4개 분류로 맞췄고, 원래 분류명은 비고에 적었습니다. 9월 1~2주 이전 기간은 CS 접수분만 있습니다.</span>
-    <span>처리 상태는 등록된 건에만 표시됩니다. 처리 부서와 상태를 고르면 바로 저장되고 변경 이력에 남습니다.</span>
-  </footer>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 
@@ -289,7 +284,6 @@ function startApp(DATA){
         WEEKS.forEach(function(w,i){if(i>0){w.id="w"+i;w.name=i+"주차";}});}}
     var hasHp=items.some(function(it){return it.src==="홈페이지";});
     document.getElementById("pRange").textContent=P.name+" · "+sh(P.start)+" ~ "+sh(P.end)+" 접수분"+(hasHp?" (CS·홈페이지)":" (CS)");
-    document.getElementById("srcNote").textContent="출처: "+P.file+". 건수는 엑셀 분류별 표와 같으며, 여러 날짜를 묶은 통합 건은 날짜별로 해당 주차에 나눠 셉니다.";
   }
 
   var state={week:"all",view:"list",cat:"",src:"",st:"",q:"",raw:true,sel:null,open:false,order:[],myDept:""};
